@@ -83,7 +83,10 @@ cancel.addEventListener('click', function () {
     nameParagraph.innerHTML = '';
     surnameParagraph.innerHTML = '';
     seatParagraph.innerHTML = '';
+    codeParagraph.innerHTML = '';
     rateParagraph.innerHTML = '';
     priceParagraph.innerHTML = '';
+    discountParagraph.innerHTML = '';
+
 })
 // }
