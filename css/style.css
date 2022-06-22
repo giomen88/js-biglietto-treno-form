@@ -9,12 +9,14 @@
 
 .content {
     background-color: rgba(249, 246, 235, 0.767);
-    height: 600px;
+    height: 700px;
     width: 1000px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 2px solid rgba(0, 0, 0, 0.873);
+    box-shadow: 7px 6px rgba(54, 54, 54, 0.384);
 }
 
 button {
