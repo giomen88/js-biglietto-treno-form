@@ -1,0 +1,22 @@
+.container {
+    height: 100vh;
+    background-image: url(../img/locomotiva.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Allura', cursive;
+}
+
+
+.content {
+    background-color: rgba(249, 246, 235, 0.767);
+    height: 600px;
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    width: 200px;
+}

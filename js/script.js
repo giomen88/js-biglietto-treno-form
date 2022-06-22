@@ -6,22 +6,21 @@
 // - PREZZO STAMPATO IN PAGINA CON MASSIMO DUE DECIMALI (CENTESIMI)
 
 const firstName = document.getElementById('first-name')
-console.log('nome' + firstName.value)
+console.log('nome ' + firstName.value)
 
 const lastName = document.getElementById('last-name')
-console.log('cognome' + lastName.value)
+console.log('cognome ' + lastName.value)
 
 const distance = document.getElementById('distance')
-console.log('km' + distance.value)
+console.log('km ' + distance.value)
 
 const age = document.getElementById('age')
-console.log('età' + age.value)
+console.log('età ' + age.value)
 
 const create = document.getElementById('create')
-console.log('crea' + create)
 
 const cancel = document.getElementById('cancel')
-console.log('cancella' + cancel)
+
 
 const priceParagraph = document.getElementById('price-paragraph')
 
@@ -29,22 +28,45 @@ const nameParagraph = document.getElementById('name-paragraph')
 
 const surnameParagraph = document.getElementById('surname-paragraph')
 
-let price = distance.value * 0.21;
-console.log(price)
+const seatParagraph = document.getElementById('seat-paragraph')
+
+const discountParagraph = document.getElementById('discount-paragraph')
+
+
+
 
 create.addEventListener('click', function () {
 
-    if (age.value = 'minor') {
+    let price = parseInt(distance.value * 0.21);
+    console.log(price)
+
+    const random = Math.random()
+
+    const minSeat = 1
+    const maxSeat = 100
+    const seat = Math.floor(random * (maxSeat + 1)) + minSeat;
+
+    if (age.value === 'minor') {
         price = (price - price * 20 / 100).toFixed(2)
     }
 
-    else if (age.value = 'senior') {
-        price = (price - price * 20 / 100).toFixed(2)
+    else if (age.value === 'senior') {
+        price = (price - price * 40 / 100).toFixed(2)
     }
 
     nameParagraph.innerHTML = firstName.value;
     surnameParagraph.innerHTML = lastName.value;
-    priceParagraph.innerHTML = price;
+    priceParagraph.innerHTML = '€ ' + price;
+    seatParagraph.innerHTML = seat;
 })
 
+cancel.addEventListener('click', function () {
 
+    firstName.value = ''
+    lastName.value = ''
+    distance.value = ''
+
+    nameParagraph.innerHTML = '';
+    surnameParagraph.innerHTML = '';
+    priceParagraph.innerHTML = '';
+})
