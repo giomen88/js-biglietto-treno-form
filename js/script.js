@@ -26,14 +26,9 @@ const rateParagraph = document.getElementById('rate-paragraph')
 
 const discountParagraph = document.getElementById('discount-paragraph')
 
-// VALIDAZIONE
+const ticket = document.getElementById('ticket')
 
 
-// if (isNaN(distance.value) || distance.value < 1 || distance.value == '') {
-//     alert('La distanza inserita non è corretta!')
-// }
-
-// else {
 
 create.addEventListener('click', function () {
 
@@ -50,9 +45,9 @@ create.addEventListener('click', function () {
     const maxCode = 9000;
     const code = Math.floor(random * (maxCode + 1)) + minCode;
 
-    const discountMessage = 'Hai uno sconto del ';
+    const discountMessage = 'Hai ricevuto uno sconto del ';
 
-    let rate = 'Adult';
+    let rate = 'Standard';
 
     if (age.value === 'minor') {
         price = (price - price * 20 / 100).toFixed(2)
@@ -66,12 +61,14 @@ create.addEventListener('click', function () {
         discountParagraph.innerHTML = discountMessage + '<strong>40%</strong>'
     }
 
+    ticket.classList.remove('d-none')
+
     nameParagraph.innerHTML = `<strong>${firstName.value}</strong>`;
     surnameParagraph.innerHTML = `<strong>${lastName.value}</strong>`;
     seatParagraph.innerHTML = `<strong>${seat}</strong>`;
     codeParagraph.innerHTML = `<strong>${code}</strong>`;
     rateParagraph.innerHTML = `<strong>${rate}</strong>`;
-    priceParagraph.innerHTML = `<strong>€${price}</strong>`;
+    priceParagraph.innerHTML = `<strong>€ ${price}</strong>`;
 })
 
 cancel.addEventListener('click', function () {
@@ -80,13 +77,5 @@ cancel.addEventListener('click', function () {
     lastName.value = '';
     distance.value = '';
 
-    nameParagraph.innerHTML = '';
-    surnameParagraph.innerHTML = '';
-    seatParagraph.innerHTML = '';
-    codeParagraph.innerHTML = '';
-    rateParagraph.innerHTML = '';
-    priceParagraph.innerHTML = '';
-    discountParagraph.innerHTML = '';
-
+    ticket.classList.add('d-none')
 })
-// }

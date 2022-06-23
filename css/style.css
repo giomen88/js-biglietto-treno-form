@@ -6,10 +6,9 @@
     font-family: 'Allura', cursive;
 }
 
-
 .content {
     background-color: rgba(249, 246, 235, 0.767);
-    height: 700px;
+    height: 600px;
     width: 1000px;
     position: absolute;
     top: 50%;
