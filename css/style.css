@@ -8,7 +8,7 @@
 
 .content {
     background-color: rgba(249, 246, 235, 0.767);
-    height: 600px;
+    min-height: 500px;
     width: 1000px;
     position: absolute;
     top: 50%;
